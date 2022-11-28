@@ -1,0 +1,29 @@
+{
+  "title": "Производители",
+  "table": "manufacturers",
+
+  "methods": [
+    "GET",
+    "POST",
+    "PUT"
+  ],
+
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Наименование",
+      "article": "title",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    }
+  ]
+}

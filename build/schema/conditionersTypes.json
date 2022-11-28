@@ -1,0 +1,30 @@
+{
+  "title": "Типы кондиционеров",
+  "table": "conditioners_types",
+
+  "methods": [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE"
+  ],
+
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Тип кондиционера",
+      "article": "title",
+      "type": "varchar(256)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Группы услуг",
+  "table": "services_groups",
+  "methods": [
+    "GET",
+    "POST",
+    "PUT"
+  ],
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Название",
+      "article": "title",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Выводить",
+      "article": "display",
+      "type": "bit(1)",
+      "null": "NO",
+      "default": "1",
+      "display": false
+    }
+  ]
+}

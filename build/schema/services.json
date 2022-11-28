@@ -1,0 +1,59 @@
+{
+  "title": "Услуги",
+  "table": "services",
+  "methods": [
+    "GET",
+    "POST",
+    "PUT"
+  ],
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Название",
+      "article": "title",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Стоимость",
+      "article": "price",
+      "type": "float",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Группа услуг",
+      "article": "group_id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Доп услуга",
+      "article": "additional_service_id",
+      "type": "int",
+      "null": "YES",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Активно",
+      "article": "active",
+      "type": "bit(1)",
+      "null": "NO",
+      "default": "1",
+      "display": false
+    }
+  ]
+}

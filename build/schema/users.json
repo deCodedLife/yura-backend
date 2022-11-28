@@ -1,0 +1,54 @@
+{
+  "title": "Пользователи",
+  "table": "users",
+
+  "methods": [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE"
+  ],
+
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Логин",
+      "article": "username",
+      "type": "varchar(256)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Пароль sha256",
+      "article": "password",
+      "type": "varchar(256)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Роль",
+      "article": "role_id",
+      "type": "int",
+      "null": "NO",
+      "default": "3",
+      "display": false
+    },
+    {
+      "title": "Актуальный",
+      "article": "active",
+      "type": "bit(1)",
+      "null": "NO",
+      "default": "1",
+      "display": false
+    }
+  ]
+}

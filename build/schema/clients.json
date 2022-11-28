@@ -1,0 +1,61 @@
+{
+  "title": "Клиенты",
+  "table": "clients",
+
+  "methods": [
+    "GET",
+    "POST",
+    "PUT"
+  ],
+
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Фамилия",
+      "article": "surname",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Имя",
+      "article": "first_name",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Отчество",
+      "article": "patronymic",
+      "type": "varchar(255)",
+      "null": "YES",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Контактный телефон",
+      "article": "phone",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Актуальный",
+      "article": "active",
+      "type": "bit(1)",
+      "null": "NO",
+      "default": "1",
+      "display": false
+    }
+  ]
+}

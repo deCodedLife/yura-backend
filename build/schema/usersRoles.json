@@ -1,0 +1,21 @@
+{
+  "title": "Роли пользователей",
+  "table": "users_roles",
+  "methods": [ "GET" ],
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": ""
+    },
+    {
+      "title": "Наименование роли",
+      "article": "title",
+      "type": "varchar(128)",
+      "null": "NO",
+      "default": "Администратор"
+    }
+  ]
+}

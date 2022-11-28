@@ -1,0 +1,37 @@
+{
+  "title": "Продажи",
+  "table": "sales",
+
+  "methods": [
+    "GET",
+    "POST",
+    "PUT"
+  ],
+
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "ID Клиента",
+      "article": "client_id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "Актуально",
+      "article": "active",
+      "type": "bit(1)",
+      "null": "NO",
+      "default": "",
+      "display": false
+    }
+  ]
+}

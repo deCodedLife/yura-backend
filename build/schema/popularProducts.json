@@ -1,0 +1,23 @@
+{
+  "title": "Популярные товары",
+  "table": "popular_products",
+  "methods": [ "GET" ],
+  "params": [
+    {
+      "title": "Идентификатор",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    },
+    {
+      "title": "ID Продукта",
+      "article": "product_id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false
+    }
+  ]
+}
