@@ -15,7 +15,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Наименование",
@@ -23,7 +25,9 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string",
+      "take_from": null
     }
   ]
 }

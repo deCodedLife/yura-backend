@@ -10,12 +10,14 @@
 
   "params": [
     {
-      "title": "Идентификатор",
+      "title": "ID",
       "article": "id",
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": true,
+      "display_type": null,
+      "take_from": null
     },
     {
       "title": "Название",
@@ -23,7 +25,9 @@
       "type": "varchar(256)",
       "null": "YES",
       "default": "",
-      "display": true
+      "display": true,
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Модель",
@@ -31,7 +35,9 @@
       "type": "varchar(256)",
       "null": "YES",
       "default": "",
-      "display": true
+      "display": true,
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Изображение",
@@ -39,7 +45,9 @@
       "type": "varchar(256)",
       "null": "YES",
       "default": "/assets/conditioner.jpg",
-      "display": false
+      "display": false,
+      "display_type": "image",
+      "take_from": null
     },
     {
       "title": "Стоимость",
@@ -47,7 +55,9 @@
       "type": "float",
       "null": "NO",
       "default": "0",
-      "display": true
+      "display": true,
+      "display_type": "float",
+      "take_from": null
     },
     {
       "title": "Описание",
@@ -55,7 +65,9 @@
       "type": "varchar(512)",
       "null": "YES",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "textarea",
+      "take_from": null
     },
     {
       "title": "Тип",
@@ -63,7 +75,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "conditioners_types/title"
     },
     {
       "title": "Есть режим охлаждения",
@@ -71,7 +85,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть режим осушения",
@@ -79,7 +95,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть режим вентиляции",
@@ -87,7 +105,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть внешний блок",
@@ -95,7 +115,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть внутренний блок",
@@ -103,7 +125,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Количество внутренних блоков",
@@ -111,7 +135,9 @@
       "type": "int",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Количество внешних блоков",
@@ -119,15 +145,9 @@
       "type": "int",
       "null": "NO",
       "default": "1",
-      "display": false
-    },
-    {
-      "title": "Тип управления",
-      "article": "control_type",
-      "type": "int",
-      "null": "NO",
-      "default": "",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Тип хладогена",
@@ -135,7 +155,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "refrigerants_types/title"
     },
     {
       "title": "Мощность охлаждения (кВт)",
@@ -143,7 +165,9 @@
       "type": "double",
       "null": "NO",
       "default": "1.5",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Расход воздуха (м3/ч)",
@@ -151,7 +175,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Обслуживаемая площадь (м2)",
@@ -159,7 +185,9 @@
       "type": "int",
       "null": "NO",
       "default": "12",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Длинна магистрали (м)",
@@ -167,7 +195,9 @@
       "type": "int",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Перепады высот (м)",
@@ -175,7 +205,9 @@
       "type": "int",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Мощьность обогрева (кВт)",
@@ -183,7 +215,9 @@
       "type": "int",
       "null": "YES",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Класс энергпотребления",
@@ -191,7 +225,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "energy_classes/title"
     },
     {
       "title": "Имеется регулировка направления воздушного потока",
@@ -199,7 +235,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Имеется регулировка скорости вращения вентилятора",
@@ -207,7 +245,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Имеется таймер включения/выключения",
@@ -215,7 +255,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Имеется турбо режим",
@@ -223,7 +265,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть режим ожидания (сон)",
@@ -231,7 +275,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть функция увлажнения воздуха",
@@ -239,7 +285,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть функция самоочистки",
@@ -247,7 +295,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть функция самодиагностики",
@@ -255,7 +305,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть экран",
@@ -263,7 +315,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Максимальный шум внешнего блока (Дб)",
@@ -271,7 +325,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Максимальный шум внутреннего блока (Дб)",
@@ -279,7 +335,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Есть биофильтр",
@@ -287,7 +345,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Есть ионизация воздуха",
@@ -295,7 +355,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     },
     {
       "title": "Вес внешнего блока (кг)",
@@ -303,7 +365,9 @@
       "type": "double",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Вес внутреннего блока (кг)",
@@ -311,7 +375,9 @@
       "type": "double",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Ширина внешнего блока (мм)",
@@ -319,7 +385,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Ширина внутреннего блока (мм)",
@@ -327,7 +395,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Высота внешнего блока (мм)",
@@ -335,7 +405,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Высота внутреннего блока (мм)",
@@ -343,7 +415,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Глубина внешнего блока (мм)",
@@ -351,7 +425,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Глубина внутреннего блока (мм)",
@@ -359,7 +435,9 @@
       "type": "int",
       "null": "NO",
       "default": "0",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Страна производитель",
@@ -367,15 +445,19 @@
       "type": "varchar(256)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Производитель",
       "article": "manufacturer",
-      "type": "int",
+      "type": "varchar(256)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Импортер",
@@ -383,7 +465,9 @@
       "type": "varchar(256)",
       "null": "NO",
       "default": "ООО \"Системы климата\" 2200002 Россия, Республика Крым, г. Симферополь ул. Стрелковая 82",
-      "display": false
+      "display": false,
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Активный",
@@ -391,7 +475,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": null,
+      "take_from": null
     }
   ]
 }

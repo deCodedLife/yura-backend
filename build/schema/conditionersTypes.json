@@ -16,7 +16,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "Тип кондиционера",
@@ -24,7 +26,9 @@
       "type": "varchar(256)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string",
+      "take_from": null
     }
   ]
 }

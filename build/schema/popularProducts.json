@@ -9,7 +9,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "number",
+      "take_from": null
     },
     {
       "title": "ID Продукта",
@@ -17,7 +19,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string",
+      "take_from": null
     }
   ]
 }

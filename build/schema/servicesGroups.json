@@ -13,7 +13,9 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": null,
+      "take_from": null
     },
     {
       "title": "Название",
@@ -21,7 +23,9 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": true,
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Выводить",
@@ -29,7 +33,9 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
     }
   ]
 }

@@ -1,11 +1,12 @@
 {
-  "title": "Продажи",
-  "table": "sales",
+  "title": "Типы охлаждения",
+  "table": "refrigerants_types",
 
   "methods": [
     "GET",
     "POST",
-    "PUT"
+    "PUT",
+    "DELETE"
   ],
 
   "params": [
@@ -20,21 +21,21 @@
       "take_from": null
     },
     {
-      "title": "ID Клиента",
-      "article": "client_id",
-      "type": "int",
+      "title": "Тип охлаждения",
+      "article": "title",
+      "type": "varchar(255)",
       "null": "NO",
       "default": "",
       "display": true,
-      "display_type": "number",
+      "display_type": "string",
       "take_from": null
     },
     {
-      "title": "Актуально",
-      "article": "active",
+      "title": "Активно",
+      "article": "is_active",
       "type": "bit(1)",
       "null": "NO",
-      "default": "",
+      "default": "1",
       "display": false,
       "display_type": null,
       "take_from": null

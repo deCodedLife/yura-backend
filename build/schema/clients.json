@@ -15,7 +15,8 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "int"
     },
     {
       "title": "Фамилия",
@@ -23,7 +24,8 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string"
     },
     {
       "title": "Имя",
@@ -31,7 +33,8 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string"
     },
     {
       "title": "Отчество",
@@ -39,7 +42,8 @@
       "type": "varchar(255)",
       "null": "YES",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "string"
     },
     {
       "title": "Контактный телефон",
@@ -47,7 +51,8 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false
+      "display": false,
+      "display_type": "phone"
     },
     {
       "title": "Актуальный",
@@ -55,7 +60,8 @@
       "type": "bit(1)",
       "null": "NO",
       "default": "1",
-      "display": false
+      "display": false,
+      "display_type": "checkbox"
     }
   ]
 }
