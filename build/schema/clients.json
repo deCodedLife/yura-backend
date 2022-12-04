@@ -10,13 +10,14 @@
 
   "params": [
     {
-      "title": "Идентификатор",
+      "title": "ID",
       "article": "id",
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false,
-      "display_type": "int"
+      "display": true,
+      "display_type": null,
+      "take_from": null
     },
     {
       "title": "Фамилия",
@@ -25,7 +26,8 @@
       "null": "NO",
       "default": "",
       "display": false,
-      "display_type": "string"
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Имя",
@@ -34,7 +36,8 @@
       "null": "NO",
       "default": "",
       "display": false,
-      "display_type": "string"
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Отчество",
@@ -43,7 +46,8 @@
       "null": "YES",
       "default": "",
       "display": false,
-      "display_type": "string"
+      "display_type": "string",
+      "take_from": null
     },
     {
       "title": "Контактный телефон",
@@ -52,7 +56,8 @@
       "null": "NO",
       "default": "",
       "display": false,
-      "display_type": "phone"
+      "display_type": "phone",
+      "take_from": null
     },
     {
       "title": "Актуальный",
@@ -61,7 +66,8 @@
       "null": "NO",
       "default": "1",
       "display": false,
-      "display_type": "checkbox"
+      "display_type": "checkbox",
+      "take_from": null
     }
   ]
 }
