@@ -34,7 +34,7 @@
       "null": "NO",
       "default": "",
       "display": true,
-      "display_type": "price",
+      "display_type": "float",
       "take_from": null
     },
     {
