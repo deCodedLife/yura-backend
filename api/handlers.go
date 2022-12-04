@@ -1,11 +1,10 @@
 package api
 
 import (
+	. "backend/api/users"
 	"net/http"
 
 	"github.com/gorilla/mux"
-
-	. "backend/api/conditioners"
 )
 
 func FileServer(r *mux.Router) {
@@ -13,6 +12,5 @@ func FileServer(r *mux.Router) {
 }
 
 func InitRouters(r *mux.Router) {
-	//r.HandleFunc("/auth", )
-	r.HandleFunc("/conditioners/popular", GetPopular).Methods(http.MethodGet)
+	r.HandleFunc("/sign-in", SignIn).Methods(http.MethodPost)
 }
