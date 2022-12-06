@@ -11,6 +11,18 @@ import (
 	"os"
 )
 
+func CORS(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		w.Header().Add("Access-Control-Allow-Headers:", "*")
+		w.Header().Add("Access-Control-Allow-Origin", "*")
+		w.Header().Add("Access-Control-Allow-Methods", "*")
+
+		next.ServeHTTP(w, r)
+		return
+	})
+}
+
 func main() {
 
 	if _, err := os.Stat("assets"); os.IsNotExist(err) {
@@ -21,7 +33,7 @@ func main() {
 
 	Handlers := rest.Construct()
 
-	r := mux.NewRouter().StrictSlash(true)
+	r := mux.NewRouter()
 
 	for _, api := range Handlers {
 		r.HandleFunc("/"+api.Path, api.Handler).Methods(api.Method)
@@ -30,13 +42,14 @@ func main() {
 	FileServer(r)
 	InitRouters(r)
 
+	//err := http.ListenAndServe(":8080", r) // Test server
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"https://localhost", "https://klimsystems.ru"},
-		AllowedHeaders:   []string{"*"},
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowCredentials: true,
 	}).Handler(r)
 
-	//err := http.ListenAndServe(":8080", r) // Test server
+	r.Use(CORS)
 	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", c)
 	HandleError(err, CustomError{}.Unexpected(err))
 }
