@@ -1,7 +1,7 @@
 module backend
 
 require (
-	github.com/deCodedLife/gorest v1.0.9
+	github.com/deCodedLife/gorest v1.2.0
 	github.com/gorilla/mux v1.8.0
 	github.com/rs/cors v1.8.2
 )
