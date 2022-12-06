@@ -35,7 +35,7 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": "combobox",
+      "display": true,
       "display_type": "combobox",
       "take_from": "conditioners/model"
     },
@@ -45,7 +45,7 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display":  true,
+      "display": true,
       "display_type": "number",
       "take_from": null
     },

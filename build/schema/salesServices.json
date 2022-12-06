@@ -45,7 +45,7 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display":  true,
+      "display": true,
       "display_type": "number",
       "take_from": null
     },
