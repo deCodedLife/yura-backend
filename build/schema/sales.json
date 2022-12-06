@@ -20,13 +20,13 @@
       "take_from": null
     },
     {
-      "title": "ID Клиента",
+      "title": "Клиент",
       "article": "client_id",
       "type": "int",
       "null": "NO",
       "default": "",
       "display": false,
-      "display_type": "number",
+      "display_type": "combobox",
       "take_from": "clients/surname/first_name/patronymic"
     },
     {
