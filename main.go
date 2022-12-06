@@ -13,7 +13,7 @@ import (
 func CORS(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-		w.Header().Set("Access-Control-Allow-Headers:", "Origin, X-Requested-With, Content-Type, Accept")
+		w.Header().Set("Access-Control-Allow-Headers:", "*")
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "*")
 
@@ -33,7 +33,6 @@ func main() {
 	Handlers := rest.Construct()
 
 	r := mux.NewRouter()
-	r.Use(CORS)
 
 	for _, api := range Handlers {
 		r.HandleFunc("/"+api.Path, api.Handler).Methods(api.Method)
@@ -43,6 +42,7 @@ func main() {
 	InitRouters(r)
 
 	//err := http.ListenAndServe(":8080", r) // Test server
+	r.Use(CORS)
 	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", r)
 	HandleError(err, CustomError{}.Unexpected(err))
 }
