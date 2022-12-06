@@ -33,7 +33,7 @@
       "title": "Модель",
       "article": "model",
       "type": "varchar(256)",
-      "null": "YES",
+      "null": "NO",
       "default": "",
       "display": true,
       "display_type": "string",
@@ -54,7 +54,7 @@
       "article": "price",
       "type": "float",
       "null": "NO",
-      "default": "0",
+      "default": "",
       "display": true,
       "display_type": "float",
       "take_from": null

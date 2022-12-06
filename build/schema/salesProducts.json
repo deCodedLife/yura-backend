@@ -1,0 +1,63 @@
+{
+  "title": "Товары в продаже",
+  "table": "sales_products",
+
+  "methods": [
+    "GET",
+    "POST",
+    "PUT"
+  ],
+
+  "params": [
+    {
+      "title": "ID",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": null,
+      "take_from": null
+    },
+    {
+      "title": "ID продажи",
+      "article": "sale_id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": null,
+      "take_from": null
+    },
+    {
+      "title": "Товар",
+      "article": "product_id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": "combobox",
+      "display_type": "combobox",
+      "take_from": "conditioners/model"
+    },
+    {
+      "title": "Количество",
+      "article": "amount",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display":  true,
+      "display_type": "number",
+      "take_from": null
+    },
+    {
+      "title": "Цена",
+      "article": "price",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": "float",
+      "take_from": null
+    }
+  ]
+}
