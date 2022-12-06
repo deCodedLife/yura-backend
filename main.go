@@ -5,7 +5,9 @@ import (
 	"github.com/deCodedLife/gorest/rest"
 	. "github.com/deCodedLife/gorest/tool"
 	"github.com/gorilla/mux"
+	"log"
 	"net/http"
+	"os"
 )
 
 func CORS(next http.Handler) http.Handler {
@@ -21,6 +23,13 @@ func CORS(next http.Handler) http.Handler {
 }
 
 func main() {
+
+	if _, err := os.Stat("assets"); os.IsNotExist(err) {
+		err := os.Mkdir("assets", 777)
+		log.Println(err.Error())
+		panic(err)
+	}
+
 	Handlers := rest.Construct()
 
 	r := mux.NewRouter()
@@ -33,7 +42,7 @@ func main() {
 	FileServer(r)
 	InitRouters(r)
 
-	//err := http.ListenAndServe(":8080", r)
+	//err := http.ListenAndServe(":8080", r) // Test server
 	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", r)
 	HandleError(err, CustomError{}.Unexpected(err))
 }

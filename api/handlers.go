@@ -1,6 +1,7 @@
 package api
 
 import (
+	. "backend/api/images"
 	. "backend/api/users"
 	"net/http"
 
@@ -13,4 +14,5 @@ func FileServer(r *mux.Router) {
 
 func InitRouters(r *mux.Router) {
 	r.HandleFunc("/sign-in", SignIn).Methods(http.MethodPost)
+	r.HandleFunc("/images", UploadImage).Methods(http.MethodPost)
 }
