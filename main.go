@@ -42,7 +42,7 @@ func main() {
 	handler := c.Handler(r)
 
 	for _, api := range Handlers {
-		r.HandleFunc("/"+api.Path, api.Handler).Methods(api.Method)
+		r.HandleFunc("/api/"+api.Path, api.Handler).Methods(api.Method)
 	}
 
 	FileServer(r)
