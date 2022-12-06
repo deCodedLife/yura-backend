@@ -5,6 +5,7 @@ import (
 	"github.com/deCodedLife/gorest/rest"
 	. "github.com/deCodedLife/gorest/tool"
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 	"log"
 	"net/http"
 	"os"
@@ -34,6 +35,12 @@ func main() {
 
 	r := mux.NewRouter()
 
+	c := cors.New(cors.Options{
+		AllowedOrigins:   []string{"http://localhost:8000"},
+		AllowCredentials: true,
+	})
+	handler := c.Handler(r)
+
 	for _, api := range Handlers {
 		r.HandleFunc("/"+api.Path, api.Handler).Methods(api.Method)
 	}
@@ -43,6 +50,6 @@ func main() {
 
 	//err := http.ListenAndServe(":8080", r) // Test server
 	r.Use(CORS)
-	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", r)
+	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", handler)
 	HandleError(err, CustomError{}.Unexpected(err))
 }
