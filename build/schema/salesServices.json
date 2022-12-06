@@ -35,7 +35,7 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": "combobox",
+      "display": true,
       "display_type": "combobox",
       "take_from": "services/title"
     },
