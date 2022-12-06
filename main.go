@@ -24,7 +24,7 @@ func main() {
 	r := mux.NewRouter().StrictSlash(true)
 
 	for _, api := range Handlers {
-		r.HandleFunc("/api/"+api.Path, api.Handler).Methods(api.Method)
+		r.HandleFunc("/"+api.Path, api.Handler).Methods(api.Method)
 	}
 
 	FileServer(r)
