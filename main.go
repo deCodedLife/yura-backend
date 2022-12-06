@@ -31,7 +31,7 @@ func main() {
 	InitRouters(r)
 
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"},
+		AllowedOrigins:   []string{"https://localhost", "https://klimsystems.ru"},
 		AllowedHeaders:   []string{"*"},
 		AllowCredentials: true,
 	}).Handler(r)
