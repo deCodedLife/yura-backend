@@ -27,7 +27,7 @@
       "default": "",
       "display": false,
       "display_type": "number",
-      "take_from": null
+      "take_from": "clients/surname/first_name/patronymic"
     },
     {
       "title": "Актуально",
