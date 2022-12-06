@@ -15,7 +15,7 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": true,
+      "display": false,
       "display_type": null,
       "take_from": null
     },
@@ -25,7 +25,7 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false,
+      "display": true,
       "display_type": "string",
       "take_from": null
     },
@@ -35,7 +35,7 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false,
+      "display": true,
       "display_type": "string",
       "take_from": null
     },
@@ -45,7 +45,7 @@
       "type": "varchar(255)",
       "null": "YES",
       "default": "",
-      "display": false,
+      "display": true,
       "display_type": "string",
       "take_from": null
     },
@@ -55,7 +55,7 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false,
+      "display": true,
       "display_type": "phone",
       "take_from": null
     },

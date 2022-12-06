@@ -25,7 +25,7 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": true,
+      "display": false,
       "display_type": "number",
       "take_from": null
     },
@@ -34,7 +34,7 @@
       "article": "active",
       "type": "bit(1)",
       "null": "NO",
-      "default": "",
+      "default": "1",
       "display": false,
       "display_type": null,
       "take_from": null
