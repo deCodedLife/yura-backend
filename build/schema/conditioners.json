@@ -80,6 +80,16 @@
       "take_from": "conditioners_types/title"
     },
     {
+      "title": "Тип управления",
+      "article": "control_type",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "control_types/title"
+    },
+    {
       "title": "Есть режим охлаждения",
       "article": "has_cool_mode",
       "type": "bit(1)",
