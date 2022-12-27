@@ -1,11 +1,12 @@
 package api
 
 import (
-	. "backend/api/images"
-	. "backend/api/users"
+	"github.com/gorilla/mux"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	. "backend/api/exel"
+	. "backend/api/images"
+	. "backend/api/users"
 )
 
 func FileServer(r *mux.Router) {
@@ -15,4 +16,5 @@ func FileServer(r *mux.Router) {
 func InitRouters(r *mux.Router) {
 	r.HandleFunc("/sign-in", SignIn).Methods(http.MethodPost)
 	r.HandleFunc("/images", UploadImage).Methods(http.MethodPost)
+	r.HandleFunc("/exel", UploadTables).Methods(http.MethodPost)
 }

@@ -23,7 +23,7 @@
     {
       "title": "Тип управления",
       "article": "title",
-      "type": "varchar(256)",
+      "type": "varchar(255)",
       "null": "NO",
       "default": "",
       "display": false,

@@ -23,6 +23,10 @@ func SignIn(w http.ResponseWriter, r *http.Request) {
 	var dbSchema Schema
 	var authData AuthData
 
+	defer func() {
+		recover()
+	}()
+
 	byteData, err := ioutil.ReadFile(filepath.Join(SchemaDir, "users.json"))
 	HandleError(err, CustomError{}.Unexpected(err))
 
