@@ -20,6 +20,16 @@
       "take_from": null
     },
     {
+      "title": "Название",
+      "article": "product_name",
+      "type": "varchar(256)",
+      "null": "YES",
+      "default": "",
+      "display": true,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
       "title": "Модель",
       "article": "model",
       "type": "varchar(256)",
