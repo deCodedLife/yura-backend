@@ -31,8 +31,7 @@ func DownloadFile(url string) (string, error) {
 
 	fileName := chipper.Sum(nil)
 
-	filePath := fmt.Sprintf("/assets/%x", fileName)
-	file, err := os.Create(filePath)
+	file, err := os.Create(fmt.Sprintf("./assets/%x", fileName))
 	defer file.Close()
 
 	_, err = io.Copy(file, content.Body)
@@ -41,7 +40,7 @@ func DownloadFile(url string) (string, error) {
 		return "", err
 	}
 
-	return filePath, nil
+	return fmt.Sprintf("/assets/%x", fileName), nil
 }
 
 func HandleFile(files []*multipart.FileHeader, conf FileConfigs) ([]string, error) {
