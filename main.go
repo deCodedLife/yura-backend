@@ -42,6 +42,7 @@ func main() {
 	InitRouters(r)
 
 	r.Use(CORS)
-	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", r)
+	err := http.ListenAndServe(":8080", r)
+	//err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", r)
 	HandleError(err, CustomError{}.Unexpected(err))
 }
