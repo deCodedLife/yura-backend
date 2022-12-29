@@ -1,0 +1,51 @@
+{
+  "title": "Классы энергоэффективности",
+  "table": "energy_classes",
+  "methods": [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE"
+  ],
+  "params": [
+    {
+      "title": "ID",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": null,
+      "take_from": null
+    },
+    {
+      "title": "Наименование работы",
+      "article": "title",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
+      "title": "Стоимость",
+      "article": "price",
+      "type": "float",
+      "null": "YES",
+      "default": "0",
+      "display_type": "float",
+      "take_from": null
+    },
+    {
+      "title": "Актуальный",
+      "article": "active",
+      "type": "bit(1)",
+      "null": "NO",
+      "default": "1",
+      "display": false,
+      "display_type": null,
+      "take_from": null
+    }
+  ]
+}
