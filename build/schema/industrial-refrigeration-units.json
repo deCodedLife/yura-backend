@@ -69,6 +69,16 @@
       "take_from": null
     },
     {
+      "title": "За кВт",
+      "article": "per_kilowatt",
+      "type": "bit(1)",
+      "null": "YES",
+      "default": "0",
+      "display": false,
+      "display_type": "checkbox",
+      "take_from": null
+    },
+    {
       "title": "Актуальный",
       "article": "active",
       "type": "bit(1)",
