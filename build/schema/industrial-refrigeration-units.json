@@ -39,6 +39,16 @@
       "take_from": null
     },
     {
+      "title": "до",
+      "article": "price",
+      "type": "float",
+      "null": "YES",
+      "default": "NULL",
+      "display": false,
+      "display_type": "float",
+      "take_from": null
+    },
+    {
       "title": "В час",
       "article": "per_hour",
       "type": "bit(1)",
