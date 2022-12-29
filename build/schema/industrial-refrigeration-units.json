@@ -40,7 +40,7 @@
     },
     {
       "title": "до",
-      "article": "price",
+      "article": "max_price",
       "type": "float",
       "null": "YES",
       "default": "NULL",
