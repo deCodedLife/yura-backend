@@ -38,6 +38,15 @@
       "take_from": null
     },
     {
+      "title": "В час",
+      "article": "per_hour",
+      "type": "bit(1)",
+      "null": "YES",
+      "default": "0",
+      "display_type": "checkbox",
+      "take_from": null
+    },
+    {
       "title": "Актуальный",
       "article": "active",
       "type": "bit(1)",
