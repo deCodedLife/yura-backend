@@ -1,6 +1,6 @@
 {
   "title": "Классы энергоэффективности",
-  "table": "energy_classes",
+  "table": "industrial_refrigeration_units",
   "methods": [
     "GET",
     "POST",
