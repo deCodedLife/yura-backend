@@ -22,6 +22,10 @@ func CORS(next http.Handler) http.Handler {
 	})
 }
 
+func angularHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./public/index.html")
+}
+
 func main() {
 
 	if _, err := os.Stat("assets"); os.IsNotExist(err) {
@@ -33,16 +37,21 @@ func main() {
 	Handlers := rest.Construct()
 
 	r := mux.NewRouter()
+	r.Host("api.localhost")
 
 	for _, api := range Handlers {
-		r.HandleFunc("/"+api.Path, api.Handler).Methods(api.Method)
+		r.HandleFunc("/api/"+api.Path, api.Handler).Methods(api.Method)
 	}
+
+	r.Handle("/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
+	r.NotFoundHandler = http.HandlerFunc(angularHandler)
+	//r.PathPrefix("/assets/").Handler(http.StripPrefix("/public/assets/", http.FileServer(http.Dir("/public/assets/"))))
 
 	FileServer(r)
 	InitRouters(r)
 
 	r.Use(CORS)
-	//err := http.ListenAndServe("api.localhost:8080", r) // TEST env
-	err := http.ListenAndServeTLS("api.klimsystems.ru:443", "certificate.crt", "private.key", r)
+	//err := http.ListenAndServe(":8080", r) // TEST env
+	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", r)
 	HandleError(err, CustomError{}.Unexpected(err))
 }
