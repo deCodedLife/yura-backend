@@ -10,11 +10,13 @@ import (
 )
 
 func FileServer(r *mux.Router) {
-	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
+	//http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/")))
+	r.PathPrefix("/assets/").Handler(http.FileServer(http.Dir("assets/"))).Host("api.klimsystems.ru")
+	r.PathPrefix("/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/")))).Host("api.klimsystems.ru")
 }
 
 func InitRouters(r *mux.Router) {
-	r.HandleFunc("/sign-in", SignIn).Methods(http.MethodPost)
-	r.HandleFunc("/images", UploadImage).Methods(http.MethodPost)
-	r.HandleFunc("/exel", UploadTables).Methods(http.MethodPost)
+	r.HandleFunc("/sign-in", SignIn).Methods(http.MethodPost).Host("api.klimsystems.ru")
+	r.HandleFunc("/images", UploadImage).Methods(http.MethodPost).Host("api.klimsystems.ru")
+	r.HandleFunc("/exel", UploadTables).Methods(http.MethodPost).Host("api.klimsystems.ru")
 }
