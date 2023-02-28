@@ -113,7 +113,7 @@
     {
       "title": "Мощность охлаждения (кВт)",
       "article": "cooling_power",
-      "type": "string",
+      "type": "varchar(50)",
       "null": "NO",
       "default": "1.5",
       "display": false,
@@ -123,7 +123,7 @@
     {
       "title": "Мощьность обогрева (кВт)",
       "article": "heating_power",
-      "type": "string",
+      "type": "varchar(50)",
       "null": "YES",
       "default": "0",
       "display": false,
