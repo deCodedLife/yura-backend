@@ -68,11 +68,11 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 				var content interface{}
 				content = rowContent
 
-				if schema.Params[rowIndex+1].Article == "id" {
+				if schema.Params[rowIndex].Article == "id" {
 					continue
 				}
 
-				if schema.Params[rowIndex+1].DisplayType == "image" {
+				if schema.Params[rowIndex].DisplayType == "image" {
 					content, err = DownloadFile(rowContent)
 
 					if err != nil {
@@ -80,8 +80,8 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 					}
 				}
 
-				if rowContent == "" && schema.Params[rowIndex+1].Null == "NO" {
-					if schema.Params[rowIndex+1].Default == "" {
+				if rowContent == "" && schema.Params[rowIndex].Null == "NO" {
+					if schema.Params[rowIndex].Default == "" {
 						errorMessage := fmt.Sprintf("отсутствует важный параметр %s столбец %s строка %d",
 							schema.Params[rowIndex+1].Title, columnName(rowIndex+1), index+1)
 						return nil, errors.New(errorMessage)
@@ -89,7 +89,7 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 					continue
 				}
 
-				dependedParams := schema.Params[rowIndex+1].TakeFrom
+				dependedParams := schema.Params[rowIndex].TakeFrom
 
 				// Check is Dependent
 				if dependedParams != "" {
@@ -116,7 +116,7 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 					content = dependedValue[0]["id"]
 				}
 
-				object[schema.Params[rowIndex+1].Article] = content
+				object[schema.Params[rowIndex].Article] = content
 			}
 		}
 

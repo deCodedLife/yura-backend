@@ -1,6 +1,6 @@
 {
   "title": "Типы охлаждения",
-  "table": "refrigerants_types",
+  "table": "freons",
 
   "methods": [
     "GET",
@@ -21,7 +21,7 @@
       "take_from": null
     },
     {
-      "title": "Тип охлаждения",
+      "title": "Тип фреона",
       "article": "title",
       "type": "varchar(255)",
       "null": "NO",

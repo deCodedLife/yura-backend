@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func CORS(next http.Handler) http.Handler {
@@ -15,6 +16,7 @@ func CORS(next http.Handler) http.Handler {
 		w.Header().Add("Access-Control-Allow-Headers:", "*")
 		w.Header().Add("Access-Control-Allow-Origin", "*")
 		w.Header().Add("Access-Control-Allow-Methods", "*")
+
 		next.ServeHTTP(w, r)
 		return
 	})
@@ -33,13 +35,30 @@ func main() {
 	r := mux.NewRouter()
 
 	for _, api := range Handlers {
-		r.HandleFunc("/"+api.Path, api.Handler).Methods(api.Method).Host("api.klimsystems.ru")
+		r.HandleFunc("/api/"+api.Path, api.Handler).Methods(api.Method)
 	}
 
-	FileServer(r)
 	InitRouters(r)
 
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.StripPrefix(r.RequestURI, http.FileServer(http.Dir("./public"))).ServeHTTP(w, r)
+	})
+
+	r.PathPrefix("/api/assets").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		http.StripPrefix("/api/assets/", http.FileServer(http.Dir("./assets"))).ServeHTTP(w, r)
+	})
+
+	r.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		prefix := r.RequestURI
+
+		if len(strings.Split(r.RequestURI, ".")) > 1 {
+			prefix = "/"
+		}
+
+		http.StripPrefix(prefix, http.FileServer(http.Dir("./public"))).ServeHTTP(w, r)
+	})
+
 	r.Use(CORS)
-	err := http.ListenAndServeTLS(":1050", "certificate.crt", "private.key", r)
+	err := http.ListenAndServeTLS(":443", "certificate.crt", "private.key", r)
 	HandleError(err, CustomError{}.Unexpected(err))
 }

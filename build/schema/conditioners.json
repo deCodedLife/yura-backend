@@ -20,9 +20,29 @@
       "take_from": null
     },
     {
+      "title": "Производитель",
+      "article": "manufacturer",
+      "type": "varchar(256)",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
+      "title": "Серия",
+      "article": "series",
+      "type": "varchar(50)",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
       "title": "Модель",
       "article": "model",
-      "type": "varchar(256)",
+      "type": "varchar(255)",
       "null": "NO",
       "default": "",
       "display": true,
@@ -80,14 +100,14 @@
       "take_from": "control_types/title"
     },
     {
-      "title": "Тип хладогена",
-      "article": "refrigerant_type",
+      "title": "Фреон",
+      "article": "freon",
       "type": "int",
       "null": "NO",
       "default": "",
       "display": false,
       "display_type": "combobox",
-      "take_from": "refrigerants_types/title"
+      "take_from": "freons/title"
     },
     {
       "title": "Мощность охлаждения (кВт)",
@@ -96,7 +116,7 @@
       "null": "NO",
       "default": "1.5",
       "display": false,
-      "display_type": "number",
+      "display_type": "string",
       "take_from": null
     },
     {
@@ -105,26 +125,6 @@
       "type": "int",
       "null": "YES",
       "default": "0",
-      "display": false,
-      "display_type": "number",
-      "take_from": null
-    },
-    {
-      "title": "Страна производитель",
-      "article": "manufacturer_country",
-      "type": "varchar(256)",
-      "null": "NO",
-      "default": "",
-      "display": false,
-      "display_type": "string",
-      "take_from": null
-    },
-    {
-      "title": "Производитель",
-      "article": "manufacturer",
-      "type": "varchar(256)",
-      "null": "NO",
-      "default": "",
       "display": false,
       "display_type": "string",
       "take_from": null

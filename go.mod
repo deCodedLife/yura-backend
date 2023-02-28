@@ -1,7 +1,7 @@
 module backend
 
 require (
-	github.com/deCodedLife/gorest v1.2.5
+	github.com/deCodedLife/gorest v1.2.6
 	github.com/gorilla/mux v1.8.0
 	github.com/h2non/filetype v1.1.3
 	github.com/xuri/excelize/v2 v2.6.1
