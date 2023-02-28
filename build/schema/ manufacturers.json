@@ -16,7 +16,7 @@
       "type": "int",
       "null": "NO",
       "default": "",
-      "display": false,
+      "display": true,
       "display_type": null,
       "take_from": null
     },
