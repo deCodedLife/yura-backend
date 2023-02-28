@@ -83,7 +83,7 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 				if rowContent == "" && schema.Params[rowIndex].Null == "NO" {
 					if schema.Params[rowIndex].Default == "" {
 						errorMessage := fmt.Sprintf("отсутствует важный параметр %s столбец %s строка %d",
-							schema.Params[rowIndex+1].Title, columnName(rowIndex+1), index+1)
+							schema.Params[rowIndex].Title, columnName(rowIndex), index+1)
 						return nil, errors.New(errorMessage)
 					}
 					continue
@@ -180,9 +180,11 @@ func UploadTables(w http.ResponseWriter, r *http.Request) {
 	rawObjects, err := rawObjects(fileList, expectedSchemas)
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
 
-	for index, schema := range expectedSchemas {
-		_, err := schema.INSERT(rawObjects[index])
-		HandleError(err, CustomError{}.WebError(w, http.StatusInternalServerError, err))
+	for _, schema := range expectedSchemas {
+		for _, object := range rawObjects {
+			_, err := schema.INSERT(object)
+			HandleError(err, CustomError{}.WebError(w, http.StatusInternalServerError, err))
+		}
 	}
 
 	SendData(w, http.StatusOK, nil)
