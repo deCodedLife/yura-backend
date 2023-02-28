@@ -2,3 +2,5 @@
 build/*.exe
 build/go_build_backend
 build/dbSettings.json
+build/*.crt
+build/*.key

@@ -26,7 +26,7 @@
       "type": "varchar(255)",
       "null": "NO",
       "default": "",
-      "display": false,
+      "display": true,
       "display_type": "string",
       "take_from": null
     }
