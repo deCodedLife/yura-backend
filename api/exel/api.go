@@ -39,8 +39,6 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 	}
 
 	for index, fileName := range filesList {
-
-		object := make(map[string]interface{})
 		schema := schemas[index]
 
 		file, err := excelize.OpenFile("assets/" + fileName)
@@ -58,6 +56,9 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 		}
 
 		for index, row := range rowsList {
+
+			object := make(map[string]interface{})
+
 			// Skip titles
 			if index == 0 {
 				continue
@@ -118,9 +119,9 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 
 				object[schema.Params[rowIndex].Article] = content
 			}
-		}
 
-		output = append(output, object)
+			output = append(output, object)
+		}
 	}
 
 	return output, nil

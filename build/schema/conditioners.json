@@ -117,7 +117,7 @@
       "null": "NO",
       "default": "1.5",
       "display": false,
-      "display_type": "float",
+      "display_type": "string",
       "take_from": null
     },
     {
@@ -127,7 +127,7 @@
       "null": "YES",
       "default": "0",
       "display": false,
-      "display_type": "float",
+      "display_type": "string",
       "take_from": null
     },
     {
