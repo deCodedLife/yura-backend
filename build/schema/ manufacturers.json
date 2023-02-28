@@ -1,6 +1,6 @@
 {
-  "title": "Типы управления",
-  "table": "control_types",
+  "title": "Производители",
+  "table": "manufacturers",
 
   "methods": [
     "GET",
@@ -21,9 +21,9 @@
       "take_from": null
     },
     {
-      "title": "Тип управления",
+      "title": "Производитель",
       "article": "title",
-      "type": "varchar(255)",
+      "type": "varchar(50)",
       "null": "NO",
       "default": "",
       "display": false,

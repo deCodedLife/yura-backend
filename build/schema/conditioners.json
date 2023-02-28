@@ -26,8 +26,8 @@
       "null": "NO",
       "default": "",
       "display": false,
-      "display_type": "string",
-      "take_from": null
+      "display_type": "combobox",
+      "take_from": "manufacturers/title"
     },
     {
       "title": "Серия",

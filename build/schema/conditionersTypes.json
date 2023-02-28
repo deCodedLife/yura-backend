@@ -17,7 +17,7 @@
       "null": "NO",
       "default": "",
       "display": false,
-      "display_type": "number",
+      "display_type": null,
       "take_from": null
     },
     {
