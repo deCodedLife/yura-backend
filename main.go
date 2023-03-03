@@ -26,8 +26,13 @@ func main() {
 
 	if _, err := os.Stat("assets"); os.IsNotExist(err) {
 		err := os.Mkdir("assets", 777)
-		log.Println(err.Error())
-		panic(err)
+
+		if err != nil {
+			log.Println(err.Error())
+			panic(err)
+		}
+
+		_ = os.Mkdir("assets/uploads", 777)
 	}
 
 	Handlers := rest.Construct()

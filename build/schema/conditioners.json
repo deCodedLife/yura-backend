@@ -26,7 +26,7 @@
       "type": "varchar(256)",
       "null": "NO",
       "default": "",
-      "display": true,
+      "display": false,
       "display_type": "combobox",
       "take_from": "manufacturers/title"
     },
