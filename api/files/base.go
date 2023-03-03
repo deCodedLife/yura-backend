@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/h2non/filetype"
 	"io"
+	"io/fs"
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
@@ -20,20 +21,14 @@ type FileConfigs struct {
 	TypeError   error
 }
 
-func ListDirectory(path string) ([]string, error) {
+func ListDirectory(path string) ([]fs.FileInfo, error) {
 	folderContent, err := ioutil.ReadDir(path)
 
 	if err != nil {
 		return nil, err
 	}
 
-	var files []string
-
-	for _, file := range folderContent {
-		files = append(files, file.Name())
-	}
-
-	return files, nil
+	return folderContent, nil
 }
 
 func DownloadFile(url string) (string, error) {
