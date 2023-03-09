@@ -11,7 +11,7 @@
 
   "params": [
     {
-      "title": "Идентификатор",
+      "title": "ID",
       "article": "id",
       "type": "int",
       "null": "NO",

@@ -18,6 +18,7 @@ type FileConfigs struct {
 	FileType    string
 	FileSubType []string
 	TypeError   error
+	SavePath    string
 }
 
 type FileInfo struct {
@@ -120,7 +121,7 @@ func HandleFile(files []*multipart.FileHeader, conf FileConfigs) ([]string, erro
 		chipper.Write([]byte(fmt.Sprintf("%d_%d", time.Now().UnixNano(), filepath.Base(handler.Filename))))
 
 		outputFileName := fmt.Sprintf("%x%s", chipper.Sum(nil), filepath.Ext(handler.Filename))
-		serverFile, err := os.Create(fmt.Sprintf("./assets/%s", outputFileName))
+		serverFile, err := os.Create(fmt.Sprintf("./assets/%s%s", conf.SavePath, outputFileName))
 
 		if err != nil {
 			return nil, err
