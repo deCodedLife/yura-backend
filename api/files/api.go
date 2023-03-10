@@ -41,7 +41,7 @@ func UploadFile(w http.ResponseWriter, r *http.Request) {
 		FileType:    "",
 		FileSubType: nil,
 		TypeError:   errors.New("something went wrong"),
-		SavePath:    r.MultipartForm.Value["path"][0] + "/",
+		SavePath:    r.MultipartForm.Value["path"][0],
 	})
 
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
