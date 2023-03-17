@@ -57,10 +57,6 @@ func DeleteFile(w http.ResponseWriter, r *http.Request) {
 
 func UploadFile(w http.ResponseWriter, r *http.Request) {
 
-	defer func() {
-		recover()
-	}()
-
 	files := r.MultipartForm.File["file"]
 	var filesList []string
 
