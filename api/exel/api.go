@@ -73,13 +73,13 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 					continue
 				}
 
-				if schema.Params[rowIndex].DisplayType == "image" {
-					content, err = DownloadFile(rowContent)
-
-					if err != nil {
-						return nil, err
-					}
-				}
+				//if schema.Params[rowIndex].DisplayType == "image" {
+				//	content, err = DownloadFile(rowContent)
+				//
+				//	if err != nil {
+				//		return nil, err
+				//	}
+				//}
 
 				if rowContent == "" && schema.Params[rowIndex].Null == "NO" {
 					if schema.Params[rowIndex].Default == "" {
