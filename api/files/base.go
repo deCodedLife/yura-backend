@@ -18,7 +18,7 @@ type FileConfigs struct {
 	FileType    string
 	FileSubType []string
 	TypeError   error
-	SavePath    string
+	SavePath    []string
 }
 
 type FileInfo struct {
@@ -86,7 +86,7 @@ func HandleFile(files []*multipart.FileHeader, conf FileConfigs) ([]string, erro
 
 	var output []string
 
-	for _, handler := range files {
+	for index, handler := range files {
 
 		file, err := handler.Open()
 
@@ -136,11 +136,11 @@ func HandleFile(files []*multipart.FileHeader, conf FileConfigs) ([]string, erro
 
 		outputFileName := fmt.Sprintf("%x%s", chipper.Sum(nil), filepath.Ext(handler.Filename))
 
-		if conf.SavePath != "" {
-			outputFileName = conf.SavePath
+		if conf.SavePath != nil {
+			outputFileName = conf.SavePath[index]
 		}
 
-		serverFile, err := os.Create(fmt.Sprintf("./assets/%s", conf.SavePath))
+		serverFile, err := os.Create(fmt.Sprintf("./assets/%s", outputFileName))
 
 		if err != nil {
 			return nil, err

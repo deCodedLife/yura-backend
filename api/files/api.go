@@ -3,7 +3,6 @@ package api
 import (
 	"encoding/json"
 	"errors"
-	"mime/multipart"
 	"net/http"
 
 	. "github.com/deCodedLife/gorest/tool"
@@ -57,25 +56,14 @@ func DeleteFile(w http.ResponseWriter, r *http.Request) {
 
 func UploadFile(w http.ResponseWriter, r *http.Request) {
 
-	files := r.MultipartForm.File["file"]
-	var filesList []string
+	filesList, err := HandleFile(r.MultipartForm.File["file"], FileConfigs{
+		FileType:    "",
+		FileSubType: nil,
+		TypeError:   errors.New("something went wrong"),
+		SavePath:    r.MultipartForm.Value["path"],
+	})
 
-	for index, file := range files {
-
-		var eachFile []*multipart.FileHeader
-		eachFile = append(eachFile, file)
-
-		filePath, err := HandleFile(eachFile, FileConfigs{
-			FileType:    "",
-			FileSubType: nil,
-			TypeError:   errors.New("something went wrong"),
-			SavePath:    r.MultipartForm.Value["path"][index],
-		})
-
-		HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
-		filesList = append(filesList, filePath[0])
-
-	}
+	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
 
 	SendData(w, http.StatusOK, filesList)
 
@@ -96,7 +84,6 @@ func UploadImage(w http.ResponseWriter, r *http.Request) {
 		FileType:    "image",
 		FileSubType: nil,
 		TypeError:   errors.New("only images expected"),
-		SavePath:    "",
 	})
 
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
