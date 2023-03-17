@@ -56,6 +56,9 @@ func DeleteFile(w http.ResponseWriter, r *http.Request) {
 
 func UploadFile(w http.ResponseWriter, r *http.Request) {
 
+	err := r.ParseMultipartForm(1024 << 20)
+	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
+
 	filesList, err := HandleFile(r.MultipartForm.File["file"], FileConfigs{
 		FileType:    "",
 		FileSubType: nil,
