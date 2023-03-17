@@ -85,8 +85,9 @@ func DownloadFile(url string) (string, error) {
 func HandleFile(files []*multipart.FileHeader, conf FileConfigs) ([]string, error) {
 
 	var output []string
+	currentIndex := 0
 
-	for index, handler := range files {
+	for _, handler := range files {
 
 		file, err := handler.Open()
 
@@ -137,7 +138,7 @@ func HandleFile(files []*multipart.FileHeader, conf FileConfigs) ([]string, erro
 		outputFileName := fmt.Sprintf("%x%s", chipper.Sum(nil), filepath.Ext(handler.Filename))
 
 		if conf.SavePath != nil {
-			outputFileName = conf.SavePath[index]
+			outputFileName = conf.SavePath[currentIndex]
 		}
 
 		serverFile, err := os.Create(fmt.Sprintf("./assets/%s", outputFileName))
@@ -155,6 +156,7 @@ func HandleFile(files []*multipart.FileHeader, conf FileConfigs) ([]string, erro
 		}
 
 		output = append(output, outputFileName)
+		currentIndex += 1
 	}
 
 	return output, nil

@@ -59,10 +59,8 @@ func UploadFile(w http.ResponseWriter, r *http.Request) {
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
 
 	filesList, err := HandleFile(r.MultipartForm.File["file"], FileConfigs{
-		FileType:    "",
-		FileSubType: nil,
-		TypeError:   errors.New("something went wrong"),
-		SavePath:    r.MultipartForm.Value["path"],
+		FileType: "",
+		SavePath: r.MultipartForm.Value["path"],
 	})
 
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
