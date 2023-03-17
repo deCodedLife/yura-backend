@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"net/http"
+	"strings"
 
 	. "github.com/deCodedLife/gorest/tool"
 )
@@ -63,7 +64,7 @@ func UploadFile(w http.ResponseWriter, r *http.Request) {
 		FileType:    "",
 		FileSubType: nil,
 		TypeError:   errors.New("something went wrong"),
-		SavePath:    r.MultipartForm.Value["path"],
+		SavePath:    strings.Split(r.MultipartForm.Value["path"][0], ","),
 	})
 
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
