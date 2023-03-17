@@ -34,7 +34,9 @@ func CreateDirectory(w http.ResponseWriter, r *http.Request) {
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
 
 	err = MkDir(request.Path)
-	SendData(w, http.StatusOK, err.Error())
+	HandleError(err, CustomError{}.WebError(w, http.StatusInternalServerError, err))
+
+	SendData(w, http.StatusOK, nil)
 
 }
 
