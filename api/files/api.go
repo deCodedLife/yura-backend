@@ -61,16 +61,12 @@ func UploadFile(w http.ResponseWriter, r *http.Request) {
 		recover()
 	}()
 
-	err := r.ParseMultipartForm(5 << 20)
-	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
-
 	files := r.MultipartForm.File["file"]
 	var filesList []string
 
 	for index, file := range files {
 
 		var eachFile []*multipart.FileHeader
-
 		eachFile = append(eachFile, file)
 
 		filePath, err := HandleFile(eachFile, FileConfigs{
