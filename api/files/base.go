@@ -44,6 +44,20 @@ func ListDirectory(path string) ([]FileInfo, error) {
 	return files, nil
 }
 
+func RemoveFile(path string) error {
+
+	err := os.Remove(path)
+	return err
+
+}
+
+func MkDir(path string) error {
+
+	err := os.Mkdir(path, 777)
+	return err
+
+}
+
 func DownloadFile(url string) (string, error) {
 	content, err := http.Get(url)
 

@@ -26,6 +26,30 @@ func LS(w http.ResponseWriter, r *http.Request) {
 	SendData(w, http.StatusOK, folderContent)
 }
 
+func CreateDirectory(w http.ResponseWriter, r *http.Request) {
+
+	var request FilesRequest
+
+	err := json.NewDecoder(r.Body).Decode(&request)
+	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
+
+	err = MkDir(request.Path)
+	SendData(w, http.StatusOK, err.Error())
+
+}
+
+func DeleteFile(w http.ResponseWriter, r *http.Request) {
+
+	var request FilesRequest
+
+	err := json.NewDecoder(r.Body).Decode(&request)
+	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
+
+	err = RemoveFile(request.Path)
+	SendData(w, http.StatusOK, err.Error())
+
+}
+
 func UploadFile(w http.ResponseWriter, r *http.Request) {
 
 	defer func() {
