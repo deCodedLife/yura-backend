@@ -121,7 +121,7 @@
       "take_from": null
     },
     {
-      "title": "Мощьность обогрева (кВт)",
+      "title": "Мощность обогрева (кВт)",
       "article": "heating_power",
       "type": "varchar(50)",
       "null": "YES",
