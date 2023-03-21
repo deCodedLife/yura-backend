@@ -131,6 +131,16 @@
       "take_from": null
     },
     {
+      "title": "Категория",
+      "article": "category",
+      "type": "int",
+      "null": "NO",
+      "default": "0",
+      "display": false,
+      "display_type": "int",
+      "take_from": "conditioners_categories/title"
+    },
+    {
       "title": "Активный",
       "article": "active",
       "type": "bit(1)",

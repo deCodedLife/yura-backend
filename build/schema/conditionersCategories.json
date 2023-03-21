@@ -1,11 +1,12 @@
 {
-  "title": "Производители",
-  "table": "manufacturers",
+  "title": "Типы кондиционеров",
+  "table": "conditioners_categories",
 
   "methods": [
     "GET",
     "POST",
-    "PUT"
+    "PUT",
+    "DELETE"
   ],
 
   "params": [
@@ -20,12 +21,12 @@
       "take_from": null
     },
     {
-      "title": "Наименование",
+      "title": "Название",
       "article": "title",
-      "type": "varchar(255)",
+      "type": "varchar(256)",
       "null": "NO",
       "default": "",
-      "display": false,
+      "display": true,
       "display_type": "string",
       "take_from": null
     }

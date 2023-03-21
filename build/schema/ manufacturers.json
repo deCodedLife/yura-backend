@@ -29,6 +29,26 @@
       "display": true,
       "display_type": "string",
       "take_from": null
+    },
+    {
+      "title": "Коэффициент",
+      "article": "coefficient",
+      "type": "float",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": "float",
+      "take_from": null
+    },
+    {
+      "title": "Курс",
+      "article": "exchange_rate",
+      "type": "float",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": "float",
+      "take_from": null
     }
   ]
 }
