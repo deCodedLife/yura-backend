@@ -114,6 +114,10 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 					if err != nil {
 						return nil, err
 					}
+					if len(dependedValue) < 1 {
+						notFoundError := fmt.Sprintf("can not find %s as %s", dependedArticle, content)
+						return nil, errors.New(notFoundError)
+					}
 					content = dependedValue[0]["id"]
 				}
 
@@ -148,10 +152,10 @@ func fromSchemasList(textSchemas []string) ([]database.Schema, error) {
 
 func UploadTables(w http.ResponseWriter, r *http.Request) {
 
-	defer func() {
-		err := recover()
-		SendData(w, http.StatusOK, err)
-	}()
+	//defer func() {
+	//	err := recover()
+	//	SendData(w, http.StatusOK, err)
+	//}()
 
 	err := r.ParseMultipartForm(5 << 20)
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
