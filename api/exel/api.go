@@ -116,7 +116,8 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 						return nil, err
 					}
 					if len(dependedValue) < 1 {
-						notFoundError := fmt.Sprintf("can not find %s/%s as %s", schema.Params[rowIndex].Article, dependedArticle, content)
+						notFoundError := fmt.Sprintf("Can't find %s/%s as %s", schema.Params[rowIndex].Article, dependedArticle, content)
+						notFoundError = fmt.Sprintf("%s. At row %d %s", notFoundError, rowIndex, rowContent)
 						return nil, errors.New(notFoundError)
 					}
 					content = dependedValue[0]["id"]
