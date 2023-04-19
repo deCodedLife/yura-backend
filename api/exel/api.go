@@ -114,7 +114,11 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 					if err != nil {
 						return nil, err
 					}
-					content = dependedValue[0]["id"]
+					if len(dependedValue) == 0 {
+						content = 0
+					} else {
+						content = dependedValue[0]["id"]
+					}
 				}
 
 				object[schema.Params[rowIndex].Article] = content
