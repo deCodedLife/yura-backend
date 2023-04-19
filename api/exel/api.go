@@ -6,6 +6,7 @@ import (
 	"github.com/deCodedLife/gorest/database"
 	"github.com/deCodedLife/gorest/rest"
 	"github.com/xuri/excelize/v2"
+	"log"
 	"math"
 	"net/http"
 	"os"
@@ -152,10 +153,11 @@ func fromSchemasList(textSchemas []string) ([]database.Schema, error) {
 
 func UploadTables(w http.ResponseWriter, r *http.Request) {
 
-	//defer func() {
-	//	err := recover()
-	//	SendData(w, http.StatusOK, err)
-	//}()
+	defer func() {
+		err := recover()
+		log.Println(err)
+		SendData(w, http.StatusOK, err)
+	}()
 
 	err := r.ParseMultipartForm(5 << 20)
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
