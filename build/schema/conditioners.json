@@ -134,7 +134,7 @@
       "title": "Категория",
       "article": "category",
       "type": "int",
-      "null": "NO",
+      "null": "YES",
       "default": "0",
       "display": false,
       "display_type": "int",
