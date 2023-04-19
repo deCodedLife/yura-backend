@@ -152,9 +152,9 @@ func fromSchemasList(textSchemas []string) ([]database.Schema, error) {
 
 func UploadTables(w http.ResponseWriter, r *http.Request) {
 
-	//defer func() {
-	//	recover()
-	//}()
+	defer func() {
+		recover()
+	}()
 
 	err := r.ParseMultipartForm(5 << 20)
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
@@ -192,5 +192,8 @@ func UploadTables(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	SendData(w, http.StatusOK, nil)
+	if err != nil {
+		SendData(w, http.StatusOK, nil)
+	}
+
 }
