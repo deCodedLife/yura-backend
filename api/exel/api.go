@@ -74,14 +74,6 @@ func rawObjects(filesList []string, schemas []database.Schema) ([]map[string]int
 					continue
 				}
 
-				//if schema.Params[rowIndex].DisplayType == "image" {
-				//	content, err = DownloadFile(rowContent)
-				//
-				//	if err != nil {
-				//		return nil, err
-				//	}
-				//}
-
 				if rowContent == "" && schema.Params[rowIndex].Null == "NO" {
 					if schema.Params[rowIndex].Default == "" {
 						errorMessage := fmt.Sprintf("отсутствует важный параметр %s столбец %s строка %d",
@@ -174,7 +166,7 @@ func UploadTables(w http.ResponseWriter, r *http.Request) {
 	fileList, err := HandleFile(files, FileConfigs{
 		FileSubType: []string{"vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.ms-excel"},
 		FileType:    "application",
-		TypeError:   errors.New("принимаются только exel таблицы"),
+		TypeError:   errors.New("принимаются тольк-о exel таблицы"),
 	})
 	HandleError(err, CustomError{}.WebError(w, http.StatusNotAcceptable, err))
 
