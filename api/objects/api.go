@@ -72,7 +72,6 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 				request := make(map[string]interface{})
 				request["id"] = object[param.Article]
 				relatedList, err := scheme.SELECT(request)
-				return request, nil
 				related := relatedList[0]
 
 				if err != nil {
