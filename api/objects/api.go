@@ -54,6 +54,9 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 			uriParams[param.Article] = variables.Get(param.Article)
 		}
 		data, err := schema.SELECT(uriParams)
+
+		return uriParams, nil
+
 		if err != nil {
 			return nil, err
 		}
