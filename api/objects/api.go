@@ -62,7 +62,7 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 
 		for _, param := range relatedObjects {
 			relatedObject := strings.Split(param.TakeFrom, "/")[0]
-			relatedField := strings.Split(param.TakeFrom, "/")[1]
+			//relatedField := strings.Split(param.TakeFrom, "/")[1]
 
 			for _, scheme := range schemes {
 				if scheme.Table != relatedObject {
@@ -78,7 +78,7 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 					return nil, err
 				}
 
-				object[param.Article] = related[relatedField]
+				object[param.Article] = related
 			}
 		}
 		return object, nil
