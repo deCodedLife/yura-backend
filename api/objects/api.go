@@ -54,6 +54,7 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 			uriParams[param.Article] = variables.Get(param.Article)
 		}
 		data, err := schema.SELECT(uriParams)
+		object := data[0]
 
 		if err != nil {
 			return nil, err
@@ -69,8 +70,8 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 				}
 
 				var request map[string]interface{}
-				return param, nil
-				request[relatedField] = data[0][param.Article]
+				return relatedField, nil
+				request[relatedField] = object[param.Article]
 
 				related, err := scheme.SELECT(request)
 
@@ -81,7 +82,7 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 				data[0][param.Article] = related[0][relatedField]
 			}
 		}
-		return data[0], nil
+		return object, nil
 	}
 	return nil, nil
 }
