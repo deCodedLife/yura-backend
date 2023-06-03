@@ -78,10 +78,7 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 					return nil, err
 				}
 
-				object[param.Article] = map[interface{}]interface{}{
-					"article": related[relatedField],
-					"value":   related[relatedField],
-				}
+				object[param.Article] = related[relatedField]
 			}
 		}
 		return object, nil
