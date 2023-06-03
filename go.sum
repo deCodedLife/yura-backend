@@ -3,6 +3,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/deCodedLife/gorest v1.2.5 h1:bKh3N5W8RvqNFqf/Va6UXwa6Yeb52iJq63NPo/FDjTI=
 github.com/deCodedLife/gorest v1.2.5/go.mod h1:MQJtgRDbWJduABwV701CPDhVGysD0v3yJ2EJPJDzXMQ=
+github.com/deCodedLife/gorest v1.2.6 h1:ZUYBi5CuuNTlhCbh3w7b+E0NSGRchfxx93bxvuKg9Co=
+github.com/deCodedLife/gorest v1.2.6/go.mod h1:MQJtgRDbWJduABwV701CPDhVGysD0v3yJ2EJPJDzXMQ=
 github.com/go-sql-driver/mysql v1.6.0 h1:BCTh4TKNUYmOmMUcQ3IipzF5prigylS7XXjEkfCHuOE=
 github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=

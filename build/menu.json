@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "title": "Заказы",
+      "icon": "dashboard",
+      "url": "admin/dashboard'"
+    },
+    {
+      "title": "Файлы",
+      "icon": "folder",
+      "url": "admin/fileManager"
+    },
+    {
+      "title": "Кондиционеры",
+      "icon": "shopping cart",
+      "children": [
+        {
+          "title": "Бытовые",
+          "url": "admin/conditioners"
+        }
+      ]
+    },
+    {
+      "title": "Услуги",
+      "icon": "settings",
+      "children": [
+        {
+          "title": "Основные",
+          "url": "admin/services"
+        },
+        {
+          "title": "Группы услуг",
+          "url": "admin/services_groups"
+        }
+      ]
+    },
+    {
+      "title": "Клиенты",
+      "icon": "people",
+      "url": "admin/clients"
+    },
+    {
+      "title": "Технические настройки",
+      "icon": "settings",
+      "children": [
+        {
+          "title": "Производители",
+          "url": "admin/manufacturers"
+        },
+        {
+          "title": "Типы кондиционеров",
+          "url": "admin/conditioners_types"
+        },
+        {
+          "title": "Типы управления",
+          "url": "admin/control_types"
+        },
+        {
+          "title": "Типы фреона",
+          "url": "admin/freons"
+        }
+      ]
+    }
+  ]
+}
