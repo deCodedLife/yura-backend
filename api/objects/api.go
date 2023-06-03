@@ -71,13 +71,14 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 
 				request := make(map[string]interface{})
 				request[relatedField] = object[param.Article]
-				related, err := scheme.SELECT(request)
+				relatedList, err := scheme.SELECT(request)
+				related := relatedList[0]
 
 				if err != nil {
 					return nil, err
 				}
 
-				data[0][param.Article] = related[0][relatedField]
+				object[param.Article] = related[relatedField]
 			}
 		}
 		return object, nil
