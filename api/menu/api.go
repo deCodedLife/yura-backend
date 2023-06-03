@@ -7,9 +7,9 @@ import (
 	"os"
 )
 
-func readMenu() (Menu, error) {
+func readMenu() (interface{}, error) {
 
-	var menuObject Menu
+	var menuObject interface{}
 	menuFile, err := os.ReadFile("menu.json")
 	err = json.Unmarshal(menuFile, &menuObject)
 
