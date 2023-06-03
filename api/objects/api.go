@@ -70,9 +70,8 @@ func getObjectRef(object string, variables url.Values) (interface{}, error) {
 				}
 
 				var request map[string]interface{}
-				return relatedField, nil
 				request[relatedField] = object[param.Article]
-
+				return request, nil
 				related, err := scheme.SELECT(request)
 
 				if err != nil {
