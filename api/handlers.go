@@ -18,5 +18,5 @@ func InitRouters(r *mux.Router) {
 	r.HandleFunc("/api/createFolder", CreateDirectory).Methods(http.MethodPost)
 	r.HandleFunc("/api/exel", UploadTables).Methods(http.MethodPost)
 	r.HandleFunc("/api/fm/ls", LS).Methods(http.MethodPost)
-	r.HandleFunc("/api/menu", HandleMenuRequest).Methods(http.MethodPost)
+	r.HandleFunc("/api/menu", HandleMenuRequest).Methods(http.MethodGet)
 }
