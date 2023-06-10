@@ -21,6 +21,14 @@
         {
           "title": "Полу-промышленные",
           "url": "admin/semiIndustrialConditioners"
+        },
+        {
+          "title": "Промышленные",
+          "url": "admin/industrialConditioners"
+        },
+        {
+          "title": "Вентиляция",
+          "url": "admin/ventilation"
         }
       ]
     },
