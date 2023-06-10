@@ -1,0 +1,144 @@
+{
+  "title": "Кондиционеры",
+  "table": "semiIndustrialConditioners",
+
+  "methods": [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE"
+  ],
+
+  "params": [
+    {
+      "title": "ID",
+      "article": "id",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": null,
+      "take_from": null
+    },
+    {
+      "title": "Производитель",
+      "article": "manufacturer",
+      "type": "varchar(256)",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "manufacturers/title"
+    },
+    {
+      "title": "Серия",
+      "article": "series",
+      "type": "varchar(50)",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
+      "title": "Модель",
+      "article": "model",
+      "type": "varchar(255)",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
+      "title": "Изображение",
+      "article": "image",
+      "type": "varchar(256)",
+      "null": "YES",
+      "default": "/assets/conditioner.jpg",
+      "display": false,
+      "display_type": "image",
+      "take_from": null
+    },
+    {
+      "title": "Стоимость",
+      "article": "price",
+      "type": "float",
+      "null": "NO",
+      "default": "",
+      "display": true,
+      "display_type": "float",
+      "take_from": null
+    },
+    {
+      "title": "Описание",
+      "article": "description",
+      "type": "varchar(512)",
+      "null": "YES",
+      "default": "",
+      "display": false,
+      "display_type": "textarea",
+      "take_from": null
+    },
+    {
+      "title": "Тип",
+      "article": "type",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "conditioners_types/title"
+    },
+    {
+      "title": "Тип управления",
+      "article": "control_type",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "control_types/title"
+    },
+    {
+      "title": "Фреон",
+      "article": "freon",
+      "type": "int",
+      "null": "NO",
+      "default": "",
+      "display": false,
+      "display_type": "combobox",
+      "take_from": "freons/title"
+    },
+    {
+      "title": "Мощность охлаждения (кВт)",
+      "article": "cooling_power",
+      "type": "varchar(50)",
+      "null": "NO",
+      "default": "1.5",
+      "display": false,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
+      "title": "Мощность обогрева (кВт)",
+      "article": "heating_power",
+      "type": "varchar(50)",
+      "null": "YES",
+      "default": "0",
+      "display": false,
+      "display_type": "string",
+      "take_from": null
+    },
+    {
+      "title": "Активный",
+      "article": "active",
+      "type": "bit(1)",
+      "null": "NO",
+      "default": "1",
+      "display": false,
+      "display_type": null,
+      "take_from": null
+    }
+  ]
+}

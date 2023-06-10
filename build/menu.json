@@ -17,6 +17,10 @@
         {
           "title": "Бытовые",
           "url": "admin/conditioners"
+        },
+        {
+          "title": "Бытовые",
+          "url": "admin/semiIndustrialConditioners"
         }
       ]
     },
