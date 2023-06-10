@@ -1,6 +1,6 @@
 {
-  "title": "Полу-промышленные кондиционеры",
-  "table": "semiIndustrialConditioners",
+  "title": "Промышленные кондиционеры",
+  "table": "industrialConditioners",
 
   "methods": [
     "GET",

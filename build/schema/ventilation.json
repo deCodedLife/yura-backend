@@ -1,6 +1,6 @@
 {
-  "title": "Полу-промышленные кондиционеры",
-  "table": "semiIndustrialConditioners",
+  "title": "Вентиляция",
+  "table": "ventilation",
 
   "methods": [
     "GET",
